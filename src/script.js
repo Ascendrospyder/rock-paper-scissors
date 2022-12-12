@@ -22,9 +22,10 @@ function getComputerChoice () {
  * The following function basically emulates one round of rock paper and scissors
  * @param {*} playerSelection
  * @param {*} computerSelection
+ * @param {*} scoreCount
  * @returns if the player wins or loses or there is a draw
  */
-function playRound (playerSelection, computerSelection) {
+function playRound (playerSelection, computerSelection, scoreCount) {
   // to make it case sensitive we need to convert our selections to lower case
   const updatedPS = playerSelection.toLowerCase()
   const updatedCS = computerSelection.toLowerCase()
@@ -32,10 +33,23 @@ function playRound (playerSelection, computerSelection) {
   // then we will utilise some conditionals to check if the player has drawn, won or lost against
   // the computer
   if (updatedPS === updatedCS) {
-    return 'Draw! Player selected ' + playerSelection + ' and computer selected ' + computerSelection + ' select again!'
+    return 'Draw! Player selected ' + playerSelection + ' and computer selected ' + computerSelection + ' select again!'; 
   } else if ((updatedPS === 'rock' && updatedCS === 'scissors') || (updatedPS === 'paper' && updatedCS === 'rock') || (updatedPS === 'scissors' && updatedCS === 'paper')) {
+    scoreCount++; 
     return 'You Win! ' + playerSelection + ' beats ' + computerSelection
   } else {
     return 'You Lose! ' + computerSelection + ' beats ' + playerSelection
+  }
+}
+
+function game()
+{
+  let playerScore = 0; 
+  let playerSelection = parseInt(prompt("Please enter either Rock, Paper or Scissors: ")); 
+  for (let i = 1; i <= 5; i++)
+  {
+    console.log("We are playing round " + i); 
+    playRound(playerSelection, getComputerChoice(), playerScore);
+    console.log("Your current score is " + playerScore); 
   }
 }

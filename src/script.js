@@ -10,11 +10,11 @@ function getComputerChoice () {
   // we will then assign numbers with their associated
   // return values
   if (result === 0) {
-    return 'Rock'
+    return 'Rock'; 
   } else if (result === 1) {
-    return 'Scissors'
+    return 'Scissors'; 
   } else {
-    return 'Paper'
+    return 'Paper'; 
   }
 }
 
@@ -36,9 +36,9 @@ function playRound (playerSelection, computerSelection, scoreCount) {
     return 'Draw! Player selected ' + playerSelection + ' and computer selected ' + computerSelection + ' select again!'; 
   } else if ((updatedPS === 'rock' && updatedCS === 'scissors') || (updatedPS === 'paper' && updatedCS === 'rock') || (updatedPS === 'scissors' && updatedCS === 'paper')) {
     scoreCount++; 
-    return 'You Win! ' + playerSelection + ' beats ' + computerSelection
+    return 'You Win! ' + playerSelection + ' beats ' + computerSelection; 
   } else {
-    return 'You Lose! ' + computerSelection + ' beats ' + playerSelection
+    return 'You Lose! ' + computerSelection + ' beats ' + playerSelection; 
   }
 }
 

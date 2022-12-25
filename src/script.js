@@ -34,11 +34,11 @@ function playRound (playerSelection, computerSelection) {
   // then we will utilise some conditionals to check if the player has drawn, won or lost against
   // the computer
   if (updatedPS === updatedCS) {
-    return 'Draw! Player selected ' + playerSelection + ' and computer selected ' + computerSelection + ' select again!'
+    return 'Draw! Player selected ' + updatedPS + ' and computer selected ' + updatedCS + ' select again!'
   } else if ((updatedPS === 'rock' && updatedCS === 'scissors') || (updatedPS === 'paper' && updatedCS === 'rock') || (updatedPS === 'scissors' && updatedCS === 'paper')) {
-    return 'You Win! ' + playerSelection + ' beats ' + computerSelection
+    return 'You Win this round! ' + updatedPS + ' beats ' + updatedCS
   } else {
-    return 'You Lose! ' + computerSelection + ' beats ' + playerSelection
+    return 'You Lose this round! ' + updatedCS + ' beats ' + updatedPS
   }
 }
 
@@ -51,12 +51,10 @@ function playRound (playerSelection, computerSelection) {
  * @returns - desired score of the player
  */
 function updateScores (resultString, score) {
-  if (resultString.includes('Draw!')) {
-    return score
-  } else if (resultString.includes('You Win!')) {
+  if (resultString.includes('You Win')) {
     return score + 1
   } else {
-    return score - 1
+    return score; 
   }
 }
 
@@ -65,17 +63,44 @@ function updateScores (resultString, score) {
  */
 function game () {
   // keep track of a score
-  let playerScore = 0
+  const buttons = document.querySelectorAll("button"); 
+  const container = document.createElement("div");
+  const resultMessage = document.createElement("p"); 
+  const scoreDiv = document.createElement("div"); 
+  const displayScore = document.createElement("h1"); 
+  let playerScore = 0; 
 
-  // since we will be performing five rounds we loop till 5
-  for (let i = 1; i <= 5; i++) {
-    // we request a selection from the player and computer
-    const playerSelection = prompt('Please enter either Rock, Paper or Scissors: ')
-    const computerSelection = getComputerChoice()
-    console.log('We are playing round ' + i)
-    const result = playRound(playerSelection, computerSelection)
-    console.log(result)
-    playerScore = updateScores(result, playerScore)
-    console.log('Your current score is ' + playerScore)
-  }
+  container.classList.toggle("result-div"); 
+  resultMessage.classList.toggle("result-prompt"); 
+  scoreDiv.classList.toggle("score-container");
+  displayScore.classList.toggle("display-scores"); 
+
+  
+  document.body.appendChild(container); 
+  container.appendChild(resultMessage); 
+  document.body.appendChild(scoreDiv); 
+  scoreDiv.appendChild(displayScore); 
+
+  
+  resultMessage.setAttribute("style", "font-size : 30px; font-family : 'Roboto Mono', monospace; color : #03c07b; font-weight : bold; display : flex; justify-content : center;"); 
+  scoreDiv.setAttribute("style", "display : flex; justify-content : flex-start; height : 170px; align-items : flex-end; ")
+  displayScore.setAttribute("style", "font-size : 30px; font-family : 'Roboto Mono', monospace; color : #03c07b; font-weight : bold;"); 
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      let computerSelection = getComputerChoice();
+      const result = playRound(this.classList, computerSelection); 
+      playerScore = updateScores(result, playerScore); 
+      displayScore.textContent = `${"Player Score : "}` + playerScore;
+      resultMessage.textContent = result; 
+      container.setAttribute("style", "font-size : 50px; color : orange;"); 
+     
+    }); 
+  }); 
 }
+
+game(); 
+
+
+
+

@@ -85,6 +85,7 @@ function game () {
   resultMessage.setAttribute("style", "font-size : 30px; font-family : 'Roboto Mono', monospace; color : #03c07b; font-weight : bold; display : flex; justify-content : center;"); 
   scoreDiv.setAttribute("style", "display : flex; justify-content : flex-start; height : 170px; align-items : flex-end; ")
   displayScore.setAttribute("style", "font-size : 30px; font-family : 'Roboto Mono', monospace; color : #03c07b; font-weight : bold;"); 
+  displayScore.textContent = `${"Player Score : "}` + playerScore;
 
   buttons.forEach((button) => {
     button.addEventListener("click", function (e) {
@@ -94,7 +95,6 @@ function game () {
       displayScore.textContent = `${"Player Score : "}` + playerScore;
       resultMessage.textContent = result; 
       container.setAttribute("style", "font-size : 50px; color : orange;"); 
-     
     }); 
   }); 
 }

@@ -81,7 +81,8 @@ function game () {
   document.body.appendChild(scoreDiv); 
   scoreDiv.appendChild(displayScore); 
 
-  
+  displayScore.textContent = `${"Player Score : "}` + playerScore;
+
   resultMessage.setAttribute("style", "font-size : 30px; font-family : 'Roboto Mono', monospace; color : #03c07b; font-weight : bold; display : flex; justify-content : center;"); 
   scoreDiv.setAttribute("style", "display : flex; justify-content : flex-start; height : 170px; align-items : flex-end; ")
   displayScore.setAttribute("style", "font-size : 30px; font-family : 'Roboto Mono', monospace; color : #03c07b; font-weight : bold;"); 

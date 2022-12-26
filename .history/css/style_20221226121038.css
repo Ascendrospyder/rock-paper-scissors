@@ -1,0 +1,78 @@
+/* The following code will remove the whitespace at the top of the browser */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  background-color: #333;
+}
+
+.title {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 300px;
+}
+
+.heading {
+  font-size: 50px;
+  color : #03c07b; 
+  font-family: 'Roboto Mono', monospace;
+}
+
+.multicoloured-text {
+  background-image: linear-gradient(to left, violet, indigo, green, blue, red, orange, red);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.prompt {
+  /* border : 2px solid black;  */
+  display : flex; 
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.prompt-message {
+  font-size: 30px;
+  color : #03c07b; 
+  font-family: 'Roboto Mono', monospace;
+}
+.results {
+  border: 5px solid rgb(40, 40, 40); 
+  flex-wrap: wrap;
+  display : flex;
+  justify-content: space-between;  
+  margin-bottom: 15px;
+}
+
+
+.results > button {
+  flex : 1 1 0; 
+  background-color: #333;
+  color: white;
+  font-size: 30px;
+  font-family: 'Roboto Mono', monospace;
+  transition: background-color 0.3s;
+}
+
+button {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+button:hover {
+  background-color: #03c07b;
+  color: black;
+}
+
+.rules-list {}

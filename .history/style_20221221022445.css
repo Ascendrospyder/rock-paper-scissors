@@ -1,0 +1,14 @@
+* {
+    background-image: url(resources/images/wallpaper.jpg); 
+    background-size: auto;
+}
+
+.title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+    text-align: center;
+    border: solid;
+    border-color: Black;
+    border-width: 2px;
+    display
+}

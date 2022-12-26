@@ -1,0 +1,25 @@
+.rules-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.rules-list {
+    border : 2px solid black; 
+    position : absolute; 
+    margin : auto; 
+    display : flex; 
+    justify-content: center;
+    align-items : center; 
+    height : 80%; 
+    width : 100%; 
+}
+
+.rules-message {
+    font-size: 25px;
+    color : #03c07b; 
+    font-family: 'Roboto Mono', monospace;
+  }
+
+

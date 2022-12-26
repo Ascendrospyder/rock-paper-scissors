@@ -1,0 +1,13 @@
+* {
+    background-image: url(https://www.wallpaperflare.com/humor-minimalism-simple-background-stone-scissors-paper-wallpaper-pieht/download/1920x1080); 
+    background-color: blue;
+}
+
+.title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+    text-align: center;
+    border: solid;
+    border-color: Black;
+    border-width: 2px;
+}

@@ -1,0 +1,21 @@
+.rules-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.rules-list {
+    display : flex; 
+    justify-content: center;
+    align-items : flex-start; 
+}
+
+.rules-message
+        font-size: 30px;
+        color : #03c07b; 
+        font-family: 'Roboto Mono', monospace;
+      }
+}
+
+
